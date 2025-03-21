@@ -56,7 +56,7 @@ const HowWeWork = () => {
         </h2>
 
         {/* Step Navigation Buttons */}
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex flex-wrap justify-center wrap space-x-4 mb-8">
           {steps.map((s) => (
             <button
               key={s.id}

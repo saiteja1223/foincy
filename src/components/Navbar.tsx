@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
-import logo from '../Asserts/foincy.jpg'; // Ensure the correct path
+import logo from '../Asserts/foincy.jpg'; // Ensure correct path
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,15 +19,15 @@ const Navbar = () => {
   const scrollToSection = (sectionId:any) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80; // Height of the fixed navbar
+      const offset = 80; // Adjust for fixed navbar height
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
-      setIsOpen(false);
+      setIsOpen(false); // Close menu after clicking a link
     }
   };
 
@@ -49,11 +49,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo + Brand Name */}
-          <button 
-            onClick={() => scrollToSection('home')} 
-            className="flex items-center space-x-2"
-          >
-            <img src={logo} alt="Logo" className="h-12 w-12 object-cover rounded-sm" /> 
+          <button onClick={() => scrollToSection('home')} className="flex items-center space-x-2">
+            <img src={logo} alt="Logo" className="h-12 w-12 object-cover rounded-sm" />
             <span className={`text-2xl font-bold ${scrolled ? 'text-gray-900' : 'text-white'}`}>
               FoincyInteriors
             </span>
@@ -74,7 +71,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Navigation Button */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -92,14 +89,14 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white"
+          className="md:hidden absolute top-16 right-0 w-2/5 bg-white shadow-lg z-50"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="flex flex-col px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="block w-full px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                className="block w-full px-3 py-2 text-lg font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded-md"
               >
                 {link.label}
               </button>
