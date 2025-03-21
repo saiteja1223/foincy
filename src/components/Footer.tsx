@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left">
           {/* Copyright */}
           <p className="text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} YourCompany. All rights reserved.
+            © 2025 Foincy Interiors. All rights reserved.
           </p>
 
        

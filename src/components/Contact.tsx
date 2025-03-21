@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { IoLogoWhatsapp } from "react-icons/io5";
-
+import emailjs from '@emailjs/browser';
 const Contact = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+  const [isSending, setIsSending] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const [userData, setUserData] = useState({
     name: "",
@@ -55,14 +57,38 @@ const Contact = () => {
     setErrors(newErrors);
     return isValid;
   };
+  const sendEmail = async () => {
+    setIsSending(true);
+    try {
+      await emailjs.send(
+        "service_o0ga4ij",
+        "template_hrx4jr8",
+        {
+          name: userData.name,
+          email: userData.email,
+          messege: userData.message,
+        },
+        "yCn_eaVlC0lBTNmA8"
+      );
+
+      setSuccessMessage("Your message has been sent successfully!");
+      setUserData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setSuccessMessage("Something went wrong. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   const submitDetails = (e:any) => {
     e.preventDefault();
 
     if (validateForm()) {
-      console.log(userData);
-      alert("Form submitted successfully!");
-      setUserData({name:'',email:'',message:''});
+      sendEmail();
+      // console.log(userData);
+      // alert("Form submitted successfully!");
+      // setUserData({name:'',email:'',message:''});
     }
   };
 
@@ -146,11 +172,15 @@ const Contact = () => {
 
               <button
                 type="submit"
+                disabled={isSending}
                 className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200"
               >
-                Send Message
+                {isSending ? "Sending..." : "Send Message"}
               </button>
             </form>
+            {successMessage && (
+              <p className="text-green-600 text-center mt-4">{successMessage}</p>
+            )}
           </div>
 
           {/* Contact Info */}
@@ -161,37 +191,38 @@ const Contact = () => {
                 <div className="flex items-center">
                   <Phone className="w-6 h-6 text-blue-600 mr-4" />
                   <a
-    href="tel:+1234567890"
+    href="tel:9849139140"
     className="text-blue-600 hover:underline"
   >
-    +1 234 567 890
+    98491 39140
   </a>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-6 h-6 text-blue-600 mr-4" />
                   <a
-    href="mailto:contact@foincyinteriors.com"
+   href="mailto:Foincyinteriors@gmail.com"
     className="text-blue-600 hover:underline"
   >
-    contact@foincyinteriors.com
+    Foincyinteriors@gmail.com 
   </a>
                 </div>
                 <div className="flex items-center">
                
                   <IoLogoWhatsapp className="w-6 h-6 text-blue-600 mr-4" />
                   <a
-    href="https://wa.me/94402564565"
+    href="https://wa.me/9849139140"
     target="_blank"
     rel="noopener noreferrer"
     className="text-blue-600 hover:underline"
   >
    
 
-                  <span>+1 234 567 890</span>  </a>
+                  <span>+91 98491 39140</span>  </a>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-6 h-6 text-blue-600 mr-4" />
-                  <span>123 Design Street, Creative City, ST 12345</span>
+                  <a href=" https://goo.gl/maps/dBA2vq9F97wQeHQh9 "  className="text-blue-600 hover:underline">
+                  <span>FOINCY INTERIORS & EXTERIORS</span></a>
                 </div>
               </div>
             </div>

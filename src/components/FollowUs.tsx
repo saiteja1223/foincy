@@ -18,7 +18,7 @@ const FollowUs = () => {
 
         {/* Instagram */}
         <a 
-          href="https://www.instagram.com/" 
+          href="https://www.instagram.com/foincyinteriors?igsh=MW5jcDFwZjhjbGUydg%3D%3D&utm_source=qr" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="text-pink-500 hover:text-pink-700 transition-transform transform hover:scale-110"

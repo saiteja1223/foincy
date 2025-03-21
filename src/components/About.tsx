@@ -34,7 +34,7 @@ Foincy Interiors is the pioneer in rendering world class projects and impressive
         </p>
       </div>
 
-      <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="text-center p-6 bg-white rounded-lg shadow-lg">
           <Award className="w-12 h-12 mx-auto mb-4 text-blue-600" />
           <h3 className="text-xl font-semibold mb-2">Award Winning</h3>

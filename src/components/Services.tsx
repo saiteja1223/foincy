@@ -83,7 +83,7 @@ const Services = () => {
           >
             <div className="text-blue-600 mb-4">{service.icon}</div>
             <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-            <p className="text-gray-600">{service.description}</p>
+            <p className="text-gray-600  hidden sm:block">{service.description}</p>
           </motion.div>
         ))}
       </div>
