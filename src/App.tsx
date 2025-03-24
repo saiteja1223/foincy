@@ -4,20 +4,21 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
-import Pricing from './components/Pricing';
+
 import Contact from './components/Contact';
 import Statistics from './components/Statistics';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import FollowUs from './components/FollowUs';
 import HowWeWork from './components/HowWeWork';
+import PeopleInfo from './components/PoopleInfo';
 
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 ">
       <Navbar />
-      <main>
+      <main  >
         <section id="home">
           <Hero />
         </section>
@@ -39,11 +40,11 @@ function App() {
         <section id="testimonials" className="py-20">
           <Testimonials />
         </section>
-        <section id="pricing" className="py-20 bg-gray-100">
-          <Pricing />
-        </section>
         <section id="contact" className="py-20">
           <Contact />
+        </section>
+        <section id="pricing" className="py-20 bg-gray-100">
+           <PeopleInfo/>
         </section>
        
       

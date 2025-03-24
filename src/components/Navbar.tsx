@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Italic, Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
-import logo from '../Asserts/foincy.jpg'; // Ensure correct path
+import logo from '../Asserts/foincy.png'; // Ensure correct path
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,10 +49,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo + Brand Name */}
-          <button onClick={() => scrollToSection('home')} className="flex items-center space-x-2">
+          <button onClick={() => scrollToSection('home')} className="flex items-center ">
             <img src={logo} alt="Logo" className="h-12 w-12 object-cover rounded-sm" />
-            <span className={`text-2xl font-bold ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+            <span className={`text-2xl font-bold ${scrolled ? 'text-orange-500' : 'text-orange-500'} italic absolute mt-[-10px] ml-12`}>
               FoincyInteriors
+                 <div className='text-[10px] absolute mt-[-10px] text-green-600 ml-3 italic'>Interiors that reflects you</div>
             </span>
           </button>
 
