@@ -43,7 +43,7 @@ function App() {
         <section id="contact" className="py-20">
           <Contact />
         </section>
-        <section id="pricing" className="py-20 bg-gray-100">
+        <section id="founders" className="py-20 bg-gray-100">
            <PeopleInfo/>
         </section>
        

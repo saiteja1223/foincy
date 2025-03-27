@@ -15,7 +15,7 @@ import office1 from "../Asserts/office1.jpg";
 const Portfolio = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0,
   });
 
   const [selectedCategory, setSelectedCategory] = useState("all");

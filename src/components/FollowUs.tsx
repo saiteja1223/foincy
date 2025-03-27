@@ -4,7 +4,7 @@ import { Youtube, Instagram, Twitter } from "lucide-react";
 const FollowUs = () => {
   return (
     <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-xl font-semibold text-gray-800">Follow Us on Social Media</h2>
+      <h2 className="text-xl font-semibold text-gray-800">Follow Us on </h2>
       <div className="flex space-x-6">
         {/* YouTube */}
         <a 

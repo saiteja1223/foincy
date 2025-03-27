@@ -6,7 +6,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import client1 from '../Asserts/client1.webp'
+import client2 from '../Asserts/client2.jpg'
+import client3 from '../Asserts/client3.webp'
 const Testimonials = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -19,21 +21,22 @@ const Testimonials = () => {
       role: 'Homeowner',
       content: 'FoincyInteriors transformed our house into a dream home. Their attention to detail and creative vision exceeded our expectations.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150',
+    
+      image: client1,
     },
     {
-      name: 'Michael Chen',
+      name: 'Sangeetha',
       role: 'Restaurant Owner',
       content: "The team's innovative design solutions helped create the perfect ambiance for our restaurant. Our customers love the space!",
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150',
+      image: client3,
     },
     {
-      name: 'Emily Davis',
+      name: 'Rama Rao',
       role: 'Office Manager',
       content: 'Professional, creative, and efficient. They delivered our office renovation on time and within budget. Highly recommended!',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150',
+      image: client2,
     },
   ];
 
